@@ -3,148 +3,154 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fun birthday card to share with friends!">
+    <title>Birthday Card!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&family=
-      Princess+Sofia&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
-      rel="stylesheet">
-    <title>Birthday Card!</title>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&family=Princess+Sofia&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
     body {
-  font-family: 'Roboto', sans-serif;
-  padding: 40px;
-  text-align: center;
-  background: linear-gradient(-45deg, #8e2de2, #4a00e0, #b5179e, #7209b7);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-}
+      font-family: 'Roboto', sans-serif;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(-45deg, #8e2de2, #4a00e0, #b5179e, #7209b7);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      margin: 0;
+    }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-.card {
-  background-color: white;
-  max-width: 400px;
-  height: 300px;
-  padding: 40px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px gray;
-  transition: transform 0.3s, background-color 0.3s ease;
-  align-items: center;     /* centers horizontally */
-  text-align: center;
-}
+    main.card {
+      background-color: white;
+      max-width: 400px;
+      width: 90vw;
+      min-height: 300px;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px gray;
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.card:hover {
-  background-color: khaki;
-  transform: scale(1.1);
-}
-    
-h1 {
- font-family: 'Princess Sofia', cursive; 
-}  
+    main.card:hover {
+      background-color: khaki;
+      transform: scale(1.04);
+      box-shadow: 0 6px 16px rgba(50,50,80,0.12);
+    }
 
-h1::before {
-  content: "🥳 ";
-}
+    h1 {
+      font-family: 'Princess Sofia', cursive;
+      margin-top: 0;
+    }  
 
-h1::after {
-  content: " 🥳";
-}
+    h1::before {
+      content: "🥳 ";
+    }
 
-.message {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-family: 'LXGW Marker Gothic', sans-serif;
-}
+    h1::after {
+      content: " 🥳";
+    }
 
-.card-links {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-}
+    .message {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      font-family: 'LXGW Marker Gothic', sans-serif;
+    }
 
-.card-links a {
-  text-decoration: none;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  background-color: midnightblue;
-  transition: background-color 0.3s ease;
-}
+    .card-links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-.card-links a:hover {
-  background-color: orangered;
-}
+    .card-links a {
+      text-decoration: none;
+      font-size: 1em;
+      padding: 12px 24px;
+      border-radius: 5px;
+      color: white;
+      background-color: midnightblue;
+      transition: background-color 0.3s;
+      margin: 0 8px;
+      display: inline-block;
+    }
 
-.card-links a:active {
-  background-color: midnightblue;
-}
+    .card-links a:hover, .card-links a:focus {
+      background-color: orangered;
+      outline: 2px solid yellow;
+    }
 
-.card-links a:focus {
-  outline: 2px solid yellow;
-}
+    .card-links a:active {
+      background-color: midnightblue;
+    }
 
-.card-links a:visited {
-  color: crimson;
-}
+    .card-links a:visited {
+      color: crimson;
+    }
 
+    section {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
 
-section {
-  margin: 20px auto;
-  max-width: 600px;
-  background-color: whitesmoke;
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-}
+    section:target {
+      display: block;
+    }
 
-section:hover{
-  transform: skewX(10deg);
-}
+    section:hover{
+      transform: skewX(10deg);
+    }
 
-section:target {
-  display: block;
-}
-
-
+    @media (max-width: 600px) {
+      main.card {
+        padding: 10vw;
+        max-width: 99vw;
+      }
+      .card-links a {
+        font-size: 0.95em;
+        padding: 10px 12px;
+      }
+    }
     </style>
-    
   </head>
   <body>
-    <div class="card" id="greeting-card">
+    <main class="card" id="greeting-card" role="main">
       <h1>Happy Birthday!</h1>
-
       <p class="message">
         Wishing you all the happiness and joy on your special day!
       </p>
       <p class="message">Love,<br> The most amazing bestie ever!</p>
 
-      <div class="card-links">
-        <a href="mailto:?subject=Happy Birthday!&body=Check out this card: 
-          https://kuXi-Ctrl.github.io/Birthday-card" target="_blank" 
-          class="send-link">Send Card</a>
-        <a href="https://wa.me/?text=Check%20out%20
-          this%20birthday%20card!%20https://kuXi-Ctrl.github.io/Birthday-card" 
-          target="_blank" class="share-link">Share on Whatsapp</a>
-      </div>
-  	</div>
+      <nav class="card-links" aria-label="Actions">
+        <a href="mailto:?subject=Happy%20Birthday!&body=Check%20out%20this%20card:%20https://kuXi-Ctrl.github.io/Birthday-card"
+           target="_blank" class="send-link" aria-label="Send this birthday card by Email">Send Card</a>
+        <a href="https://wa.me/?text=Check%20out%20this%20birthday%20card!%20https://kuXi-Ctrl.github.io/Birthday-card"
+           target="_blank" class="share-link" aria-label="Share this birthday card on Whatsapp">Share on Whatsapp</a>
+      </nav>
+    </main>
 
-  <section id="send">
-    <h2>Sending your card...</h2>
-    <p>Card successfully sent to your recipient!</p>
-  </section>
+    <section id="send">
+      <h2>Sending your card...</h2>
+      <p>Card successfully sent to your recipient!</p>
+    </section>
 
-  <section id="share">
-    <h2>Sharing your card...</h2>
-    <p>Your card was shared on social media!</p>
-  </section>
-    
+    <section id="share">
+      <h2>Sharing your card...</h2>
+      <p>Your card was shared on social media!</p>
+    </section>
   </body>
 </html>
-
-
